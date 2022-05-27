@@ -15,11 +15,20 @@
     </div>
     <div>
       <a href="/">Home</a>
-      <a href="/logout">Logout</a>
-      <a href="/login">Login</a>
-      <a href="/users/new">Signup</a>
+
     </div>
 
+    <p>
+    <% if @current_user %>
+    Welcome, <%= @current_user["username"] %>
+    <p>
+              <a href="/logout">Logout</a>
+              </p>
+    <% else %>
+       <a href="/login">Login</a>
+        <a href="/users/new">Signup</a>
+    <% end %>
+    </p>
     <%= yield %>
   </body>
 </html>
