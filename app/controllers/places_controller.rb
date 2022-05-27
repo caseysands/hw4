@@ -2,7 +2,6 @@ class PlacesController < ApplicationController
 
   def index
      @places = Place.all
-     @current_user = User.find_by({ "id" => session["user_id"]})
   end
 
   def show
@@ -15,9 +14,11 @@ class PlacesController < ApplicationController
   end
 
   def create
-    @place = Place.new
-    @place["name"] = params["place"]["name"]
-    @place.save
+    if @current_user
+       @place = Place.new
+       @place["name"] = params["place"]["name"]
+       @place.save
+    end
     redirect_to "/places"
   end
 
