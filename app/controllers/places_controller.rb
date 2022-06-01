@@ -18,6 +18,8 @@ class PlacesController < ApplicationController
        @place = Place.new
        @place["name"] = params["place"]["name"]
        @place.save
+    else
+      flash["notice"] = "Please login to add new places."
     end
     redirect_to "/places"
   end
