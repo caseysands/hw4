@@ -23,3 +23,10 @@ test:
 production:
   <<: *default
   database: db/production.sqlite3
+
+production:
+  <<: *default
+  adapter: postgresql
+  database: casey-sands-hw4_production
+  username: casey-sands-hw4
+  password: <%= ENV["CASEY-SANDS-HW4_DATABASE_PASSWORD"] %>
