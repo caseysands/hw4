@@ -24,6 +24,6 @@ production:
   <<: *default
   database: db/production.sqlite3
   adapter: postgresql
-  database: casey-sands-hw4_production
-  username: casey-sands-hw4
+  database: casey_sands_hw4_production
+  username: casey_sands_hw4
   password: <%= ENV["CASEY-SANDS-HW4_DATABASE_PASSWORD"] %>
